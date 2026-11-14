@@ -1,6 +1,35 @@
-html,
-body,
-#root {
-    height: 100%;
-    margin: 0;
+/* Стили для контейнера */
+.flex-container {
+    width: 700px;
+    height: 300px;
+    display: flex; /* Включаем флексбокс */
+    justify-content: space-between; /* Распределяем элементы по всей оси X с равными промежутками */
+    align-items: center; /* По умолчанию выравниваем по центру по Y */
+    background-color: #eee; /* Добавил цвет фона, чтобы видеть границы (можете удалить) */
+    box-sizing: border-box; /* Чтобы padding не увеличивал ширину */
+}
+
+/* Общие стили для всех кругов */
+.flex-container div {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Делаем из квадратов круги */
+    background-color: #daa520; /* Заданный цвет */
+}
+
+/* Выравнивание для 1-го и 5-го элементов (прижимаем к верхнему краю) */
+.flex-container div:nth-child(1),
+.flex-container div:nth-child(5) {
+    align-self: flex-start;
+}
+
+/* Выравнивание для 2-го и 4-го элементов (по центру) */
+.flex-container div:nth-child(2),
+.flex-container div:nth-child(4) {
+    align-self: center;
+}
+
+/* Выравнивание для 3-го элемента (прижимаем к нижнему краю) */
+.flex-container div:nth-child(3) {
+    align-self: flex-end;
 }
